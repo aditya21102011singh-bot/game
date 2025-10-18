@@ -108,9 +108,30 @@ function update(){
   draw();
   requestAnimationFrame(update);
 }
-
+const jumpSound = new Audio('sounds/jump.wav');
+const powerupSound = new Audio('sounds/powerup.wav');
+const hitSound = new Audio('sounds/hit.wav');
+const bgMusic = new Audio('sounds/background.mp3');
+bgMusic.loop = true;   // Makes music loop
+bgMusic.volume = 0.5;  // Adjust volume
+bgMusic.play();
 // --- End Game ---
 function endGame(){ gameOver=true; gameRunning=false; alert('Game Over! Score: '+score); highScores.push(score); localStorage.setItem('highScores',JSON.stringify(highScores)); location.reload();}
+function jump(){
+  if(player.dy==0 || player.canDoubleJump){
+    player.dy = -15;
+    jumpSound.play();
+    if(!player.canDoubleJump) player.canDoubleJump=false;
+  }
+}
+
+function collectPowerUp(){
+  powerupSound.play();
+}
+
+function hitHazard(){
+  hitSound.play();
+}
 
 // --- Draw ---
 function draw(){
@@ -127,11 +148,6 @@ function draw(){
   // Particles
   particles.forEach(p=>{ ctx.fillStyle=p.color; ctx.fillRect(p.x,p.y,4,4); });
 }
-const jumpSound = new Audio('sounds/jump.wav');
-const powerupSound = new Audio('sounds/powerup.wav');
-const hitSound = new Audio('sounds/hit.wav');
-const bgMusic = new Audio('sounds/background.mp3');
-bgMusic.loop = true;   // Makes music loop
-bgMusic.volume = 0.5;  // Adjust volume
-bgMusic.play();
+
+
 
