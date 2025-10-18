@@ -1,0 +1,12 @@
+body { margin:0; overflow:hidden; font-family:Arial; background:linear-gradient(to top,#222,#555);}
+canvas { display:block; margin:0 auto; background:transparent;}
+#menu { position:absolute; width:100%; height:100%; background:rgba(0,0,0,0.8); color:white; display:flex; flex-direction:column; justify-content:center; align-items:center;}
+#menu h1{ font-size:48px; margin-bottom:20px;}
+#menu button{ font-size:24px; margin:10px; padding:10px 20px; cursor:pointer;}
+#instructions{ margin-top:20px; text-align:center;}
+#scoreBoard{ position:absolute; top:10px; left:10px; color:white; font-size:24px; display:none;}
+#score, #level{ margin:5px;}
+#pauseBtn{ margin-top:5px; font-size:16px;}
+#highScores{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(0,0,0,0.9); color:white; padding:20px; border-radius:10px; text-align:center;}
+#highScores ul{ list-style:none; padding:0;}
+#highScores li{ margin:5px 0;}
