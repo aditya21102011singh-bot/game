@@ -127,3 +127,11 @@ function draw(){
   // Particles
   particles.forEach(p=>{ ctx.fillStyle=p.color; ctx.fillRect(p.x,p.y,4,4); });
 }
+const jumpSound = new Audio('sounds/jump.wav');
+const powerupSound = new Audio('sounds/powerup.wav');
+const hitSound = new Audio('sounds/hit.wav');
+const bgMusic = new Audio('sounds/background.mp3');
+bgMusic.loop = true;   // Makes music loop
+bgMusic.volume = 0.5;  // Adjust volume
+bgMusic.play();
+
